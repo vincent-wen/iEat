@@ -1,0 +1,85 @@
+div.block-nice-menus {
+  z-index: 30;
+}
+#page ul.nice-menu {
+  display: none;
+  padding: 0;
+  margin: 0 0 10px;
+  z-index: 30;
+  list-style: none;
+  li {
+    display: block;
+    float: left;
+    padding-bottom: $line-height;
+    a { 
+      color: $blue; 
+      padding: 10px 10px; 
+      text-transform: none;
+    }
+    ul {
+      padding: 0;
+      background-color: white;
+      box-shadow: 0 0 1px $a;
+      li { width: 100%; white-space: nowrap; }
+    }
+    &:hover {
+      border-bottom: solid $orange $line-height;
+      padding-bottom: 0;
+    }
+    &.active-trail>a,
+    a:hover {
+      text-shadow: 0 0 10px $yellow;
+    }
+  }
+}
+
+@include small-middle-screen {
+  #page ul.nice-menu {
+    li {
+      padding-bottom: 0;
+      border-bottom: solid $orange 1px;
+      float: none;
+      &:hover {
+        border-bottom: solid $orange 1px;
+      }
+      ul {
+        box-shadow: none;
+        position: relative;
+        li {
+          padding-left: 10px;
+          border-bottom: none;
+          width: 100%; 
+          white-space: normal;
+          &.last { border-bottom: none; }
+          a {
+            font-size: $h3-font-size;
+            text-decoration: underline;
+            font-style: italic;
+            color: $base_color;
+          }
+          &:hover {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include small-screen {
+  #page ul.nice-menu {
+    width: 100%;
+    position: fixed;
+    background: white;
+    z-index: 20;
+    top: 40px;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    li a:hover {
+      text-shadow: none;
+    }
+  }
+}

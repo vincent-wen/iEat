@@ -1,0 +1,277 @@
+@import "zen/background";
+
+h1,h2,h3,h4,h5 {
+	font-family: $julius-sans-one;
+	font-weight: $font-weight;
+	margin: 0;
+}
+
+button, input[type=submit] {
+	margin:10px;
+}
+
+#page {
+	overflow-x: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	a {
+		font-family: $helvetica;
+		color: $a;
+		text-decoration: none;
+		&:hover { 
+			color: $a_hover;
+			-webkit-transition: color 0.5s;
+    	        transition: color 0.5s; 
+		}
+	}
+	color: $font;
+}
+
+#header,
+#content,
+.region-sidebar-first,
+#footer {
+	padding: 10px 10px 30px;
+}
+
+#main {
+	position: relative;
+	padding:0;
+}
+
+#background {
+	background-color: #E5EDE8;
+	right: 0px;
+	position: absolute;
+	height: 100%;
+	width: 33.333333%;
+	z-index: -1000;
+}
+
+#header {
+	width: 100%;
+	background-image: url($img_path+"huntington.jpg");
+	background-size: cover;
+	padding-top: 40px;
+
+	#site-name a span{
+		font-size: $h1-font-size*2.3;
+		color: white;
+	}
+	#site-slogan {
+		margin-top: 10px;
+		color: $slogan;
+		font-style: italic;
+		font-size: $h3-font-size;
+		opacity: 0.8;
+		webkit-opacity: 0.8;
+	}
+}
+
+#content {
+	min-height: 777px;
+	padding-right: 30px;
+	img {
+		padding: 10px 0;
+	}
+	a {
+		color: $sky_blue;
+	}
+	td, th {
+		padding: 10px;
+	}
+	table.views-table {
+		border: 1px #ddd solid;
+		box-shadow: 5px 5px 12px #ddd;
+		margin: 15px auto;
+		width: 90%;
+	}
+}
+
+#navigation {
+	position: relative;
+	height: auto;
+	padding: 10px 0;
+	a {
+		font-family: $julius-sans-one;
+		font-size: $h2-font-size;
+	}
+	li.active-trail a {
+  		text-shadow: 0 0 10px #ffffff;
+	}
+}
+
+.region-sidebar-first {
+	background-color: #E5EDE8;
+	position: relative;
+}
+
+#block-system-navigation ul.menu li.menu__item {
+	// list-style-type: disc;
+	list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABFJREFUCB1jVmCGQClmEWYOAAZ8AMy3HPLXAAAAAElFTkSuQmCC');
+}
+
+#footer {
+	background: #134347;
+	min-height: 270px;
+	color: $grey;
+	text-align: center;
+	padding: 70px 0 40px;
+	a {
+		color: $orange;
+		&:hover {
+			color: white;
+		}
+	}
+}
+
+.sidebars div.block {
+	margin: 0;
+	padding: 20px 0 20px 30px;
+	border-bottom: $seperator 1px solid;
+	li {
+		padding-top: 10px;
+	}
+}
+
+#page .breadcrumb {
+	a, li{color: $grey;}
+	color: $grey;
+}
+
+.view-most-popular li{
+	font-family: $times-new-roman;
+	font-size: 1.1em;
+	font-style: italic;
+}
+
+#block-system-user-menu li{
+	list-style: none;
+}
+
+table.views-view-grid {
+	width: 100%;
+	td {
+		padding: 20px 0;
+		vertical-align: top;
+	}
+}
+
+.views-row {
+	padding: 10px 0;
+}
+
+ul.menu {
+	margin: 0;
+}
+
+.views-field-service-links {
+	float: right;
+	li {
+		list-style: none;
+		float: left;
+		padding-right: 5px;
+	}
+	ul {
+		margin: 0;
+	}
+}
+
+article.node #fivestar-custom-widget {
+	margin: 20px 0;
+}
+
+#edit-field-occasions-tid-wrapper,
+#edit-field-regional-tid-wrapper {
+	color: #555;
+	.bef-checkboxes div.form-item {
+		float: left;
+		width: 48%;
+		color: #333;
+		font-style: italic;
+	}
+}
+
+.views-exposed-widget {
+	color: #555;
+}
+
+div#show-menu {
+	z-index: 20;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 39px;
+	height: 40px;
+	background: url("../images/menu.jpg");
+}
+
+@include small-screen {
+	#header {
+		margin-top: 40px;
+		height: 100px;
+		padding-top: 10px;
+		background-size: cover;
+
+		#site-name a span{
+			font-size: $h1-font-size*1.5;
+			color: white;
+		}
+		#site-slogan { display: none; }
+	}
+	#content {
+		padding: 5px;
+	}
+	table.views-view-grid td{
+		float: left;
+		clear: both;
+	}
+	#background {
+	    display: none;
+	}
+	#block-search-form {
+		z-index: 20;
+		margin: 0;
+		padding: 0;
+		background-color: white;
+		position: fixed;
+		top: 0;
+		left: 39px;
+		right: 0;
+		height: 40px;
+		input[type=submit] { 
+			display: none;
+		}
+		input[type=text] {
+			width: 100%;
+			height: 40px;
+			border-radius: 0;
+			margin: 0;
+			border: none;
+			background: url("../images/search2.png") 95% 50% no-repeat;
+		}
+	}
+}
+
+@include middle-large-screen {
+	#header {
+		height: 200px;
+	}
+	table.views-view-grid td{
+		float: none;
+	}
+  #background {
+    display: initial;
+  }
+  table.views-view-grid td {
+  	width: 48%;
+  }
+}
+
+@include large-screen {
+	ul.tag-cloud {
+		display: block;
+		max-width: 300px;
+	}
+}
